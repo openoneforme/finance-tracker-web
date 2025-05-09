@@ -18,8 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <main>{children}</main>
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-grow bg-gray-100 dark:bg-gray-800 py-8">
+            {children}
+          </main>
+          {/* You might add a Footer component here later */}
+        </div>
       </body>
     </html>
   );

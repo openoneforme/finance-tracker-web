@@ -16,10 +16,8 @@ export default function Home() {
   const handleOpenModal = () => setIsOpen(true);
   const handleCloseModal = () => setIsOpen(false);
 
-  // Just for demonstration in the console on initial load
   useEffect(() => {
     console.log('Current theme:', theme);
-    // Let's simulate a theme change after a short delay
     setTimeout(() => {
       setTheme('dark');
       console.log('Theme changed to dark');
@@ -27,9 +25,9 @@ export default function Home() {
   }, [theme, setTheme]);
 
   return (
-    <div className={`p-8 ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-800'} min-h-screen flex flex-col items-center justify-center`}>
+    <div className={`p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-800'} min-h-screen flex flex-col items-center justify-center`}>
       <Card className="max-w-md w-full mb-6">
-        <h1 className="text-3xl font-bold mb-4">Welcome to Your Finance Tracker!</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-4">Welcome to Your Finance Tracker!</h1>
         <p className="text-gray-600 dark:text-gray-400">Start managing your finances effectively.</p>
         <div className="mt-4 space-x-2">
           <Button onClick={() => alert('Get Started Clicked')}>Get Started</Button>
@@ -51,7 +49,7 @@ export default function Home() {
         </div>
       </Modal>
 
-      <div className="fixed bottom-4 right-4">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6">
         <Button onClick={handleOpenModal} variant="text">Open Example Modal</Button>
       </div>
     </div>
