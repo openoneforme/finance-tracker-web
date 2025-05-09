@@ -1,14 +1,13 @@
-'use client';
-
 import { ReactNode } from 'react';
 
 type CardProps = {
   children: ReactNode;
+  className?: string;
 };
 
-export default function Card({ children }: CardProps) {
+export default function Card({ children, className = '' }: CardProps) {
   return (
-    <div className="bg-white shadow rounded p-4 border border-gray-100">
+    <div className={`bg-white shadow-md rounded-lg ${className}`}>
       {children}
     </div>
   );
